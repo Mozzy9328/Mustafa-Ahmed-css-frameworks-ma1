@@ -9,6 +9,31 @@ NAVBAR
 
 
 */
+@media (max-width: 988px) {
+  .hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    position: absolute;
+    cursor: pointer;
+    width: 35px;
+    height: 30px;
+    top: 10px;
+    right: 20px;
+  }
+  .hamburger__line1, .hamburger__line2, .hamburger__line3 {
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+  }
+}
+
 ul {
   margin-bottom: 0rem !important;
 }
@@ -18,9 +43,9 @@ ul {
 }
 
 .navbar, .footer {
-  -webkit-box-pack: center !important;
-      -ms-flex-pack: center !important;
-          justify-content: center !important;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
   background-color: #f4f3ee !important;
 }
 
@@ -30,13 +55,16 @@ ul {
   list-style: none;
   text-transform: uppercase;
   font-size: 36px;
+  color: #000;
 }
 
 .navbar .navbar__list, .footer .navbar__list {
+  display: none;
   margin-right: 2%;
   list-style: none;
   font-size: 18px;
   text-transform: uppercase;
+  color: #000;
 }
 
 .navbar .navbar__list:hover, .footer .navbar__list:hover {
@@ -44,7 +72,7 @@ ul {
 }
 
 .navbar .navbar__list--active, .footer .navbar__list--active {
-  color: #c32c72 !important;
+  color: #c32c72;
 }
 
 .navbar .navbar__list a, .footer .navbar__list a {
@@ -52,15 +80,21 @@ ul {
   color: #000;
 }
 
+.navbar .change, .footer .change {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 @media (max-width: 990px) {
   .navbar .navbar, .footer .navbar, .navbar .footer, .footer .footer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: none;
-        -ms-flex-align: none;
-            align-items: none;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: initial !important;
+        -ms-flex-align: initial !important;
+            align-items: initial !important;
     text-align: center;
   }
   .navbar .navbar__logo, .footer .navbar__logo {
@@ -87,9 +121,14 @@ MAIN PAGE
 }
 
 .box__title {
+  display: inline;
   width: 100%;
   margin: 4% auto;
   text-align: center;
+}
+
+.box__title.hide {
+  display: none;
 }
 
 .box__item, .box__item--activewhite, .box__item--activered {
