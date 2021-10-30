@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+
 $primary: #f4f3ee;
 $secondary: #e5e5e5;
 $third: #c32c72;
@@ -8,19 +10,21 @@ $nav-color: $primary;
 $main-color: $secondary;
 $white-box: $white;
 
+* {
+	font-family: "open sans", sans-serif, "Gill Sans", "Gill Sans MT", Calibri,
+		"Trebuchet MS", sans-serif;
+}
 body {
 	max-width: 100%;
 }
 
 /*
 
-
 NAVBAR
-
 
 */
 
-@media (max-width: 988px) {
+@media (max-width: 990px) {
 	.hamburger {
 		display: flex;
 		flex-direction: column;
@@ -46,37 +50,41 @@ ul {
 	margin-bottom: 0rem !important;
 }
 
-.navbar-toggler {
-	margin: 0 auto;
+h1 {
+	font-weight: 600 !important;
 }
 
 .navbar {
-	justify-content: flex-start !important;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
 	background-color: $nav-color !important;
 
-	.navbar__logo {
+	@media (max-width: 900px) {
+		align-items: inherit !important;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	&__logo {
+		background-color: $nav-color !important;
 		padding-right: 70%;
-		margin-left: 3%;
-		list-style: none;
 		text-transform: uppercase;
+		list-style: none;
 		font-size: 36px;
 		color: $black;
 	}
 
-	.navbar__list {
-		display: none;
+	&__list {
 		margin-right: 2%;
 		list-style: none;
 		font-size: 18px;
 		text-transform: uppercase;
 		color: $black;
 
-		&:hover {
-			border-bottom: $third 2px solid;
-		}
-
 		&--active {
-			color: $third;
+			color: $third !important;
 		}
 
 		a {
@@ -85,20 +93,21 @@ ul {
 		}
 	}
 
-	.change {
-		display: flex;
-	}
-
 	@media (max-width: 990px) {
 		.navbar {
-			flex-direction: column !important;
-			align-items: initial !important;
-			text-align: center;
+			&__list {
+				display: none;
+			}
 
 			&__logo {
-				padding-right: 90%;
+				padding-right: 80%;
 				margin-bottom: 2%;
 			}
+		}
+		.change {
+			display: flex;
+			flex-direction: column !important;
+			justify-content: flex-start !important;
 		}
 	}
 }
@@ -157,5 +166,6 @@ FOOTER PAGE
 .footer {
 	@extend .navbar;
 	padding: 2% 5% !important;
+	text-align: center;
 	justify-content: space-between !important;
 }
